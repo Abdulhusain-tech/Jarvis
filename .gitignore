@@ -1,1 +1,15 @@
 /envjarvis
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+envjarvis/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (if used later)
+node_modules/
