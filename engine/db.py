@@ -25,3 +25,7 @@ con.commit()
 query = "INSERT INTO web_command VALUES (null,'flipkart', 'https://www.flipkart.com/')"
 cursor.execute(query)
 con.commit()
+
+query = "INSERT INTO web_command VALUES (null,'youtube', 'https://www.youtube.com/')"
+cursor.execute(query)
+con.commit()
