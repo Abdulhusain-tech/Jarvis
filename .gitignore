@@ -13,3 +13,5 @@ Thumbs.db
 
 # Node (if used later)
 node_modules/
+
+/engine/cookies.json

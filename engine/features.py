@@ -12,7 +12,8 @@ import pvporcupine
 import pyaudio
 import struct
 import time
-
+from hugchat import hugchat
+chatbot = None
 
 
 con = sqlite3.connect("jarvis.db")
@@ -112,3 +113,20 @@ def hotword():
             audio_stream.close()
         if paud is not None:
             paud.terminate()
+
+def chatBot(query):
+    global chatbot
+
+    try:
+        if chatbot is None:
+            chatbot = hugchat.ChatBot(cookie_path="engine/cookies.json")
+
+        response = chatbot.chat(query)
+        print("BOT:", response)
+        speak(response)
+        return response
+
+    except Exception as e:
+        print("CHATBOT ERROR:", e)
+        speak("Sorry, I am having trouble answering right now.")
+        return "error"
